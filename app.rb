@@ -21,7 +21,7 @@ class App
   def run
     hunt
 
-    scheduler.in '5m' do
+    scheduler.every '5m' do
       LOGGER.info('Hunting...')
       hunt
     end
