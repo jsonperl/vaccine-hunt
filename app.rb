@@ -20,26 +20,34 @@ REDIS = if ENV['REDISLAB_ENDPOINT']
 require 'dotenv/load' if ENVIRONMENT == 'development'
 require_relative 'cvs'
 require_relative 'sms'
+require_relative 'people'
 
 class App
-  attr_accessor :scheduler
+  attr_accessor :scheduler, :people, :states
 
   def initialize
     @scheduler = Rufus::Scheduler.new
+    @people = People.all
+    @states = @people.map(&:state).uniq
   end
 
   def run
-    hunt
+    frequency = ENV['RACK_ENV'] == 'development' ? '5s' : '5m'
 
-    scheduler.every '5m' do
-      LOGGER.info('Hunting...')
-      hunt
+    scheduler.every frequency do
+      @states.each do |state|
+        hunt(state)
+      end
     end
   end
 
-  def hunt
-    locations = Cvs.new.locations
-    Sms.new.dispatch(ENV['MY_NUMBER'], locations)
+  def hunt(state)
+    LOGGER.info("Hunting in #{state}...")
+
+    locations = Cvs.new(state).locations
+    @people.each do |person|
+      Sms.new.dispatch(person.number, locations) if person.state == state
+    end
   end
 end
 
