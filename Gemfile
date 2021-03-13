@@ -3,8 +3,9 @@
 source "https://rubygems.org"
 ruby "2.7.1"
 
-gem "twilio-ruby"
+gem "sinatra"
 gem "rufus-scheduler"
+gem "twilio-ruby"
 
 group :development do
   gem "pry-byebug"

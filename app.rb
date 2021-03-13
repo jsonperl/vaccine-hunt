@@ -25,8 +25,6 @@ class App
       LOGGER.info('Hunting...')
       hunt
     end
-
-    scheduler.join
   end
 
   def hunt
@@ -43,3 +41,10 @@ end
 
 app = App.new
 app.run
+
+set :port, ENV['PORT'] || '8080'
+set :bind, '0.0.0.0'
+
+get '/healthcheck' do
+  "OK\n"
+end

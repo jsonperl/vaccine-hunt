@@ -1,0 +1,22 @@
+name: vaccine-hunt
+region: nyc
+services:
+- environment_slug: ruby
+  github:
+    branch: main
+    deploy_on_push: true
+    repo: jsonperl/vaccine-hunt
+  http_port: 8080
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  name: vaccine-hunt
+  routes:
+  - path: /
+  run_command: ruby app.rb
+  health_check:
+    initial_delay_seconds: 10
+    period_seconds: 3
+    timeout_seconds: 5
+    success_threshold: 3
+    failure_threshold: 5
+    http_path: /healthcheck
