@@ -1,14 +1,15 @@
-require 'json'
-require 'logger'
-require 'twilio-ruby'
-require 'rufus-scheduler'
-require 'dotenv/load' if ENV['RACK_ENV'] == 'development'
-
-require_relative 'cvs'
-require_relative 'sms'
+require 'rubygems'
+require 'bundler/setup'
+Bundler.require(:default, ENV['RACK_ENV'])
 
 LOGGER = Logger.new(STDOUT)
 LOGGER.level = Logger::INFO
+
+ENVIRONMENT = ENV['RACK_ENV']
+
+require 'dotenv/load' if ENVIRONMENT == 'development'
+require_relative 'cvs'
+require_relative 'sms'
 
 class App
   attr_accessor :scheduler
