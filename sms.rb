@@ -9,10 +9,15 @@ class Sms
   end
 
   def dispatch(number, locations)
+    body = "Appointment available at #{locations.join(', ')}"
+
+    LOGGER.info("SMS #{number} - #{body}")
+    return if ENVIRONMENT == 'development'
+
     client.messages.create(
       from: ENV['TWILIO_FROM_NUMBER'],
       to: number,
-      body: "Appointment available at #{locations.join(', ')}"
+      body: body
     )
   end
 end
