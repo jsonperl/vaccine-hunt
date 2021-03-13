@@ -3,6 +3,7 @@
 source "https://rubygems.org"
 ruby "2.7.1"
 
+gem "redis"
 gem "sinatra"
 gem "rufus-scheduler"
 gem "twilio-ruby"

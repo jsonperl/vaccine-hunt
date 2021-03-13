@@ -7,6 +7,16 @@ LOGGER.level = Logger::INFO
 
 ENVIRONMENT = ENV['RACK_ENV']
 
+REDIS = if ENV['REDISLAB_ENDPOINT']
+          Redis.new(
+            host: ENV['REDISLAB_ENDPOINT'].split(':')[0],
+            port: ENV['REDISLAB_ENDPOINT'].split(':')[1],
+            password: ENV['REDISLAB_PW']
+          )
+        else
+          Redis.new
+        end
+
 require 'dotenv/load' if ENVIRONMENT == 'development'
 require_relative 'cvs'
 require_relative 'sms'
@@ -21,7 +31,7 @@ class App
   def run
     hunt
 
-    scheduler.every '15m' do
+    scheduler.every '5m' do
       LOGGER.info('Hunting...')
       hunt
     end
@@ -29,12 +39,6 @@ class App
 
   def hunt
     locations = Cvs.new.locations
-
-    if locations.empty?
-      LOGGER.info('No locations available')
-      return
-    end
-
     Sms.new.dispatch(ENV['MY_NUMBER'], locations)
   end
 end
