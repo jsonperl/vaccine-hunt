@@ -1,23 +1,24 @@
+ENVIRONMENT = ENV['RACK_ENV']
+
 require 'rubygems'
 require 'bundler/setup'
-Bundler.require(:default, ENV['RACK_ENV'])
+Bundler.require(:default, ENVIRONMENT)
+
+require 'dotenv/load' if ENVIRONMENT == 'development'
 
 LOGGER = Logger.new(STDOUT)
 LOGGER.level = Logger::INFO
 
-ENVIRONMENT = ENV['RACK_ENV']
-
 REDIS = if ENV['REDISLAB_ENDPOINT']
           Redis.new(
-            host: ENV['REDISLAB_ENDPOINT'].split(':')[0],
-            port: ENV['REDISLAB_ENDPOINT'].split(':')[1],
-            password: ENV['REDISLAB_PW']
+            host: ENV['REDISLAB_ENDPOINT'].split(':')[0].strip,
+            port: ENV['REDISLAB_ENDPOINT'].split(':')[1].strip,
+            password: ENV['REDISLAB_PW'].strip
           )
         else
           Redis.new
         end
 
-require 'dotenv/load' if ENVIRONMENT == 'development'
 require_relative 'cvs'
 require_relative 'sms'
 require_relative 'people'
