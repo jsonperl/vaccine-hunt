@@ -50,21 +50,20 @@ class App
   end
 
   def run
-    scheduler.every "#{frequency}s" do
-      @states.each do |state|
-        hunt(state)
-      end
-    end
+    scheduler.in('1s') { hunt }
+    scheduler.every("#{frequency}s") { hunt }
   end
 
-  def hunt(state)
-    LOGGER.info("Hunting in #{state}...")
+  def hunt
+    @states.each do |state|
+      LOGGER.info("Hunting in #{state}...")
 
-    locations = filter(Cvs.new(state).locations)
-    return if locations.empty?
+      locations = filter(Cvs.new(state).locations)
+      return if locations.empty?
 
-    @people.each do |person|
-      Sms.new.dispatch(person, locations) if person.state == state
+      @people.each do |person|
+        Sms.new.dispatch(person, locations) if person.state == state
+      end
     end
   end
 
