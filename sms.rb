@@ -1,4 +1,6 @@
 class Sms
+  HEADER = "💉 Vaccine Hunter 💉\n"
+
   attr_reader :client
 
   def initialize
@@ -8,25 +10,18 @@ class Sms
     )
   end
 
-  def dispatch(number, locations)
-    locations = unbounce(number, locations)
+  def dispatch(person, locations)
     return if locations.empty?
 
-    body = "Appointment available at #{locations.join(', ')}"
+    body = HEADER + 'CVS Locations: ' + locations.map { |l| l.name }.join(', ')
+    LOGGER.info("SMS #{person.number} - #{body}")
 
-    LOGGER.info("SMS #{number} - #{body}")
-    return if ENVIRONMENT == 'development'
+    return if ENVIRONMENT.dev?
 
     client.messages.create(
       from: ENV['TWILIO_FROM_NUMBER'],
-      to: number,
+      to: person.number,
       body: body
     )
-  end
-
-  def unbounce(number, locations)
-    locations.select do |loc|
-      REDIS.set("#{number}:#{loc}", true, ex: 86_400, nx: true) # 24 hours
-    end
   end
 end

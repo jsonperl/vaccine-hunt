@@ -6,9 +6,13 @@ class Cvs
   end
 
   def locations
-    data['responsePayloadData']['data'][state].select do |loc|
+    available = data['responsePayloadData']['data'][state].select do |loc|
       loc['status'] == 'Available'
-    end.map { |s| s['city'] }.sort
+    end
+
+    available.map do |avail|
+      Location.new(:cvs, avail['city'])
+    end
   end
 
   def data

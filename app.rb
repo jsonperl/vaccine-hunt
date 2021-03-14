@@ -1,12 +1,24 @@
-ENVIRONMENT = ENV['RACK_ENV']
+ENVIRONMENT = Class.new do
+  def self.prod?
+    !dev?
+  end
+
+  def self.dev?
+    env == 'development'
+  end
+
+  def self.env
+    ENV['RACK_ENV']
+  end
+end
 
 require 'rubygems'
 require 'bundler/setup'
-Bundler.require(:default, ENVIRONMENT)
+Bundler.require(:default, ENVIRONMENT.env)
 
-require 'dotenv/load' if ENVIRONMENT == 'development'
+require 'dotenv/load' if ENVIRONMENT.dev?
 
-LOGGER = Logger.new(STDOUT)
+LOGGER = Logger.new($stdout)
 LOGGER.level = Logger::INFO
 
 REDIS = if ENV['REDISLAB_ENDPOINT']
@@ -21,6 +33,7 @@ REDIS = if ENV['REDISLAB_ENDPOINT']
 
 require_relative 'cvs'
 require_relative 'sms'
+require_relative 'location'
 require_relative 'people'
 
 class App
@@ -32,10 +45,12 @@ class App
     @states = @people.map(&:state).uniq
   end
 
-  def run
-    frequency = ENV['RACK_ENV'] == 'development' ? '5s' : '5m'
+  def frequency
+    @frequency ||= ENV['RACK_ENV'] == 'development' ? 5 : 300
+  end
 
-    scheduler.every frequency do
+  def run
+    scheduler.every "#{frequency}s" do
       @states.each do |state|
         hunt(state)
       end
@@ -45,9 +60,21 @@ class App
   def hunt(state)
     LOGGER.info("Hunting in #{state}...")
 
-    locations = Cvs.new(state).locations
+    locations = filter(Cvs.new(state).locations)
+    return if locations.empty?
+
     @people.each do |person|
-      Sms.new.dispatch(person.number, locations) if person.state == state
+      Sms.new.dispatch(person, locations) if person.state == state
+    end
+  end
+
+  def filter(locations)
+    # Reset the TTL and filter to locations unseen for 3x the frequency
+    locations.select do |loc|
+      prev = REDIS.getset(loc.key, true)
+      REDIS.expire(loc.key, frequency * 3)
+
+      prev.nil?
     end
   end
 end
