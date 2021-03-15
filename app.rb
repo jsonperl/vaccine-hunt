@@ -50,8 +50,12 @@ class App
   end
 
   def run
-    scheduler.in('1s') { hunt }
-    scheduler.every("#{frequency}s") { hunt }
+    if ENVIRONMENT.dev?
+      hunt
+    else
+      scheduler.in('1s') { hunt }
+      scheduler.every("#{frequency}s") { hunt }
+    end
   end
 
   def hunt
