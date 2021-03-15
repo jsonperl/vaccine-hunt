@@ -10,7 +10,7 @@ end
 class People
   def self.all
     ENV['PEOPLE'].split(',').map do |p|
-      Person.new(*p.split(':'))
+      Person.new(*p.split(':')[0..1])
     end
   end
 end
