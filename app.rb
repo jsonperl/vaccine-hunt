@@ -59,6 +59,11 @@ class App
   end
 
   def hunt
+    if Cvs.unavailable?
+      LOGGER.warn 'CVS Unavailable for hunting'
+      return
+    end
+
     @states.each do |state|
       LOGGER.info("Hunting in #{state}...")
 

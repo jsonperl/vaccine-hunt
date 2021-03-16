@@ -27,4 +27,11 @@ class Cvs
   def url
     "https://www.cvs.com/immunizations/covid-19-vaccine.vaccine-status.#{state.downcase}.json?vaccineinfo"
   end
+
+  def self.unavailable?
+    uri = URI('https://www.cvs.com/vaccine/intake/store/cvd-schedule?icid=coronavirus-lp-vaccine-sd-statetool')
+    res = Net::HTTP.get_response(uri)
+
+    res.code == '503' && !!res.body.match('<title>Vaccine Waiting Room page</title>')
+  end
 end
