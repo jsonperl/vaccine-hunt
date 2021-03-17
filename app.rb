@@ -67,11 +67,20 @@ class App
     @states.each do |state|
       LOGGER.info("Hunting in #{state}...")
 
-      locations = filter(Cvs.new(state).locations)
+      locations = Cvs.new(state).locations
+
       if locations.empty?
         LOGGER.info('Nothing found...')
       else
         LOGGER.info("Found #{locations.map { |loc| loc.name }.join(', ')}")
+      end
+
+      locations = filter(locations)
+      if locations.empty?
+        LOGGER.info('Nothing new...')
+        return
+      else
+        LOGGER.info("New locations #{locations.map { |loc| loc.name }.join(', ')}")
       end
 
       @people.each do |person|
@@ -82,10 +91,10 @@ class App
   end
 
   def filter(locations)
-    # Reset the TTL and filter to locations unseen for 3x the frequency
+    # Reset the TTL and filter to locations unseen for 2x the frequency
     locations.select do |loc|
       prev = REDIS.getset(loc.key, true)
-      REDIS.expire(loc.key, frequency * 3)
+      REDIS.expire(loc.key, frequency * 2)
 
       prev.nil?
     end

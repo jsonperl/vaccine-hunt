@@ -14,7 +14,7 @@ class Cvs
 
     available.map do |avail|
       Location.new(:cvs, avail['city'])
-    end + [Location.new(:cvs, 'UNIVERSITY HEIGHTS')]
+    end
   end
 
   def data
