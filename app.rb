@@ -68,10 +68,15 @@ class App
       LOGGER.info("Hunting in #{state}...")
 
       locations = filter(Cvs.new(state).locations)
-      return if locations.empty?
+      if locations.empty?
+        LOGGER.info('Nothing found...')
+      else
+        LOGGER.info("Found #{locations.map { |loc| loc.name }.join(', ')}")
+      end
 
       @people.each do |person|
-        Sms.new.dispatch(person, locations) if person.state == state
+        sms_locations = locations & (person.locations.length > 0 ? person.locations : locations)
+        Sms.new.dispatch(person, sms_locations) if person.state == state
       end
     end
   end

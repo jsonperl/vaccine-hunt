@@ -1,10 +1,7 @@
 class Cvs
   attr_reader :state
 
-  NOTIFY_LOCATIONS = JSON.parse(File.read('data/cvs_location.json'))
-                         .select { |l| l['notify'] }
-                         .map { |l| [l['name'], true] }
-                         .to_h
+  LOCATIONS = JSON.parse(File.read('data/cvs_location.json'))
 
   def initialize(state)
     @state = state.upcase
@@ -12,12 +9,12 @@ class Cvs
 
   def locations
     available = data['responsePayloadData']['data'][state].select do |loc|
-      loc['status'] == 'Available' && NOTIFY_LOCATIONS.include?(loc['city'])
+      loc['status'] == 'Available'
     end
 
     available.map do |avail|
       Location.new(:cvs, avail['city'])
-    end
+    end + [Location.new(:cvs, 'UNIVERSITY HEIGHTS')]
   end
 
   def data

@@ -1,5 +1,5 @@
 class Sms
-  HEADER = "💉 Vaccine Hunter 💉\n"
+  HEADER = "💉Vaccine Hunter💉\n"
 
   attr_reader :client
 

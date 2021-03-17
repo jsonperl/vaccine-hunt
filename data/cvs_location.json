@@ -1,437 +1,350 @@
 [
    {
-      "name":"AVON",
-      "zip":"44011",
-      "notify":true
+      "name": "AVON",
+      "zip": "44011"
    },
    {
-      "name":"AVON LAKE",
-      "zip":"44054",
-      "notify":true
+      "name": "AVON LAKE",
+      "zip": "44054"
    },
    {
-      "name":"BRECKSVILLE",
-      "zip":"44141",
-      "notify":true
+      "name": "BRECKSVILLE",
+      "zip": "44141"
    },
    {
-      "name":"BROOKPARK",
-      "zip":"44142",
-      "notify":true
+      "name": "BROOKPARK",
+      "zip": "44142"
    },
    {
-      "name":"CHAGRIN FALLS",
-      "zip":"44022",
-      "notify":true
+      "name": "CHAGRIN FALLS",
+      "zip": "44022"
    },
    {
-      "name":"CHESTERLAND",
-      "zip":"44026",
-      "notify":true
+      "name": "CHESTERLAND",
+      "zip": "44026"
    },
    {
-      "name":"CINCINNATI",
-      "zip":"45201",
-      "notify":true
+      "name": "CINCINNATI",
+      "zip": "45201"
    },
    {
-      "name":"CLEVELAND",
-      "zip":"44101",
-      "notify":true
+      "name": "CLEVELAND",
+      "zip": "44101"
    },
    {
-      "name":"CLEVELAND HEIGHTS",
-      "zip":"44118",
-      "notify":true
+      "name": "CLEVELAND HEIGHTS",
+      "zip": "44118"
    },
    {
-      "name":"COPLEY",
-      "zip":"44321",
-      "notify":true
+      "name": "COPLEY",
+      "zip": "44321"
    },
    {
-      "name":"DOYLESTOWN",
-      "zip":"44230",
-      "notify":true
+      "name": "DOYLESTOWN",
+      "zip": "44230"
    },
    {
-      "name":"FAIRLAWN",
-      "zip":"44333",
-      "notify":true
+      "name": "FAIRLAWN",
+      "zip": "44333"
    },
    {
-      "name":"GENEVA",
-      "zip":"44041",
-      "notify":true
+      "name": "GENEVA",
+      "zip": "44041"
    },
    {
-      "name":"INDEPENDENCE",
-      "zip":"44131",
-      "notify":true
+      "name": "INDEPENDENCE",
+      "zip": "44131"
    },
    {
-      "name":"LAKEWOOD",
-      "zip":"44111",
-      "notify":true
+      "name": "LAKEWOOD",
+      "zip": "44111"
    },
    {
-      "name":"LORAIN",
-      "zip":"44089",
-      "notify":true
+      "name": "LORAIN",
+      "zip": "44089"
    },
    {
-      "name":"LYNDHURST",
-      "zip":"44124",
-      "notify":true
+      "name": "LYNDHURST",
+      "zip": "44124"
    },
    {
-      "name":"MAYFIELD HEIGHTS",
-      "zip":"44124",
-      "notify":true
+      "name": "MAYFIELD HEIGHTS",
+      "zip": "44124"
    },
    {
-      "name":"MAYFIELD VLG",
-      "zip":"44124",
-      "notify":true
+      "name": "MAYFIELD VLG",
+      "zip": "44124"
    },
    {
-      "name":"MEDINA",
-      "zip":"44256",
-      "notify":true
+      "name": "MEDINA",
+      "zip": "44256"
    },
    {
-      "name":"MIDDLEBURG HEIGHTS",
-      "zip":"44130",
-      "notify":true
+      "name": "MIDDLEBURG HEIGHTS",
+      "zip": "44130"
    },
    {
-      "name":"MIDDLEFIELD",
-      "zip":"44062",
-      "notify":true
+      "name": "MIDDLEFIELD",
+      "zip": "44062"
    },
    {
-      "name":"MILFORD",
-      "zip":"45150",
-      "notify":true
+      "name": "MILFORD",
+      "zip": "45150"
    },
    {
-      "name":"NILES",
-      "zip":"44446",
-      "notify":true
+      "name": "NILES",
+      "zip": "44446"
    },
    {
-      "name":"NORTH OLMSTED",
-      "zip":"44070",
-      "notify":true
+      "name": "NORTH OLMSTED",
+      "zip": "44070"
    },
    {
-      "name":"NORTH ROYALTON",
-      "zip":"44133",
-      "notify":true
+      "name": "NORTH ROYALTON",
+      "zip": "44133"
    },
    {
-      "name":"OBERLIN",
-      "zip":"44074",
-      "notify":true
+      "name": "OBERLIN",
+      "zip": "44074"
    },
    {
-      "name":"PAINESVILLE",
-      "zip":"44077",
-      "notify":true
+      "name": "PAINESVILLE",
+      "zip": "44077"
    },
    {
-      "name":"RAVENNA",
-      "zip":"44266",
-      "notify":true
+      "name": "RAVENNA",
+      "zip": "44266"
    },
    {
-      "name":"SHAKER HEIGHTS",
-      "zip":"44120",
-      "notify":true
+      "name": "SHAKER HEIGHTS",
+      "zip": "44120"
    },
    {
-      "name":"SOUTH EUCLID",
-      "zip":"44124",
-      "notify":true
+      "name": "SOUTH EUCLID",
+      "zip": "44124"
    },
    {
-      "name":"UNIVERSITY HEIGHTS",
-      "zip":"44118",
-      "notify":true
+      "name": "UNIVERSITY HEIGHTS",
+      "zip": "44118"
    },
    {
-      "name":"WARREN",
-      "zip":"44481",
-      "notify":true
+      "name": "WARREN",
+      "zip": "44481"
    },
    {
-      "name":"WESTLAKE",
-      "zip":"44145",
-      "notify":true
+      "name": "WESTLAKE",
+      "zip": "44145"
    },
    {
-      "name":"WILLOUGHBY",
-      "zip":"44094",
-      "notify":true
+      "name": "WILLOUGHBY",
+      "zip": "44094"
    },
    {
-      "name":"YOUNGSTOWN",
-      "zip":"44511",
-      "notify":true
+      "name": "YOUNGSTOWN",
+      "zip": "44511"
    },
    {
-      "name":"ATHENS",
-      "zip":"45701",
-      "nofify":false
+      "name": "ATHENS",
+      "zip": "45701"
    },
    {
-      "name":"BELLEVUE",
-      "zip":"44811",
-      "nofify":false
+      "name": "BELLEVUE",
+      "zip": "44811"
    },
    {
-      "name":"BLANCHESTER",
-      "zip":"45107",
-      "nofify":false
+      "name": "BLANCHESTER",
+      "zip": "45107"
    },
    {
-      "name":"BLUFFTON",
-      "zip":"45817",
-      "nofify":false
+      "name": "BLUFFTON",
+      "zip": "45817"
    },
    {
-      "name":"BROOKVILLE",
-      "zip":"45309",
-      "nofify":false
+      "name": "BROOKVILLE",
+      "zip": "45309"
    },
    {
-      "name":"BUCYRUS",
-      "zip":"44820",
-      "nofify":false
+      "name": "BUCYRUS",
+      "zip": "44820"
    },
    {
-      "name":"CANTON",
-      "zip":"44701",
-      "nofify":false
+      "name": "CANTON",
+      "zip": "44701"
    },
    {
-      "name":"COLUMBUS",
-      "zip":"43205",
-      "nofify":false
+      "name": "COLUMBUS",
+      "zip": "43205"
    },
    {
-      "name":"DAYTON",
-      "zip":"45424",
-      "nofify":false
+      "name": "DAYTON",
+      "zip": "45424"
    },
    {
-      "name":"DENNISON",
-      "zip":"44621",
-      "nofify":false
+      "name": "DENNISON",
+      "zip": "44621"
    },
    {
-      "name":"DOVER",
-      "zip":"44663",
-      "nofify":false
+      "name": "DOVER",
+      "zip": "44663"
    },
    {
-      "name":"DUBLIN",
-      "zip":"43064",
-      "nofify":false
+      "name": "DUBLIN",
+      "zip": "43064"
    },
    {
-      "name":"EATON",
-      "zip":"45320",
-      "nofify":false
+      "name": "EATON",
+      "zip": "45320"
    },
    {
-      "name":"FAIRBORN",
-      "zip":"45324",
-      "nofify":false
+      "name": "FAIRBORN",
+      "zip": "45324"
    },
    {
-      "name":"FINDLAY",
-      "zip":"45840",
-      "nofify":false
+      "name": "FINDLAY",
+      "zip": "45840"
    },
    {
-      "name":"FRANKLIN",
-      "zip":"45005",
-      "nofify":false
+      "name": "FRANKLIN",
+      "zip": "45005"
    },
    {
-      "name":"FREMONT",
-      "zip":"43420",
-      "nofify":false
+      "name": "FREMONT",
+      "zip": "43420"
    },
    {
-      "name":"GAHANNA",
-      "zip":"43230",
-      "nofify":false
+      "name": "GAHANNA",
+      "zip": "43230"
    },
    {
-      "name":"HAMILTON",
-      "zip":"45013",
-      "nofify":false
+      "name": "HAMILTON",
+      "zip": "45013"
    },
    {
-      "name":"HEATH",
-      "zip":"43056",
-      "nofify":false
+      "name": "HEATH",
+      "zip": "43056"
    },
    {
-      "name":"HILLIARD",
-      "zip":"43026",
-      "nofify":false
+      "name": "HILLIARD",
+      "zip": "43026"
    },
    {
-      "name":"JOHNSTOWN",
-      "zip":"43031",
-      "nofify":false
+      "name": "JOHNSTOWN",
+      "zip": "43031"
    },
    {
-      "name":"KETTERING",
-      "zip":"45429",
-      "nofify":false
+      "name": "KETTERING",
+      "zip": "45429"
    },
    {
-      "name":"LEBANON",
-      "zip":"45036",
-      "nofify":false
+      "name": "LEBANON",
+      "zip": "45036"
    },
    {
-      "name":"LIMA",
-      "zip":"45807",
-      "nofify":false
+      "name": "LIMA",
+      "zip": "45807"
    },
    {
-      "name":"LOVELAND",
-      "zip":"45140",
-      "nofify":false
+      "name": "LOVELAND",
+      "zip": "45140"
    },
    {
-      "name":"MANSFIELD",
-      "zip":"44903",
-      "nofify":false
+      "name": "MANSFIELD",
+      "zip": "44903"
    },
    {
-      "name":"MONTGOMERY",
-      "zip":"45140",
-      "nofify":false
+      "name": "MONTGOMERY",
+      "zip": "45140"
    },
    {
-      "name":"MORAINE",
-      "zip":"45342",
-      "nofify":false
+      "name": "MORAINE",
+      "zip": "45342"
    },
    {
-      "name":"MOUNT HEALTHY",
-      "zip":"45231",
-      "nofify":false
+      "name": "MOUNT HEALTHY",
+      "zip": "45231"
    },
    {
-      "name":"NEW LEBANON",
-      "zip":"45345",
-      "nofify":false
+      "name": "NEW LEBANON",
+      "zip": "45345"
    },
    {
-      "name":"NEW LEXINGTON",
-      "zip":"43764",
-      "nofify":false
+      "name": "NEW LEXINGTON",
+      "zip": "43764"
    },
    {
-      "name":"NEWARK",
-      "zip":"43055",
-      "nofify":false
+      "name": "NEWARK",
+      "zip": "43055"
    },
    {
-      "name":"NORWOOD",
-      "zip":"45212",
-      "nofify":false
+      "name": "NORWOOD",
+      "zip": "45212"
    },
    {
-      "name":"OAK HILL",
-      "zip":"45656",
-      "nofify":false
+      "name": "OAK HILL",
+      "zip": "45656"
    },
    {
-      "name":"PIQUA",
-      "zip":"45356",
-      "nofify":false
+      "name": "PIQUA",
+      "zip": "45356"
    },
    {
-      "name":"REYNOLDSBURG",
-      "zip":"43068",
-      "nofify":false
+      "name": "REYNOLDSBURG",
+      "zip": "43068"
    },
    {
-      "name":"RICHMOND HEIGHTS",
-      "zip":"44143",
-      "nofify":false
+      "name": "RICHMOND HEIGHTS",
+      "zip": "44143"
    },
    {
-      "name":"ROCKY RIVER",
-      "zip":"44116",
-      "nofify":false
+      "name": "ROCKY RIVER",
+      "zip": "44116"
    },
    {
-      "name":"SIDNEY",
-      "zip":"45365",
-      "nofify":false
+      "name": "SIDNEY",
+      "zip": "45365"
    },
    {
-      "name":"SPRINGFIELD",
-      "zip":"45502",
-      "nofify":false
+      "name": "SPRINGFIELD",
+      "zip": "45502"
    },
    {
-      "name":"TIPP CITY",
-      "zip":"45373",
-      "nofify":false
+      "name": "TIPP CITY",
+      "zip": "45373"
    },
    {
-      "name":"TOLEDO",
-      "zip":"43615",
-      "nofify":false
+      "name": "TOLEDO",
+      "zip": "43615"
    },
    {
-      "name":"UPPER ARLINGTON",
-      "zip":"43221",
-      "nofify":false
+      "name": "UPPER ARLINGTON",
+      "zip": "43221"
    },
    {
-      "name":"WAVERLY",
-      "zip":"45690",
-      "nofify":false
+      "name": "WAVERLY",
+      "zip": "45690"
    },
    {
-      "name":"WESTERVILLE",
-      "zip":"43081",
-      "nofify":false
+      "name": "WESTERVILLE",
+      "zip": "43081"
    },
    {
-      "name":"WHITEHALL",
-      "zip":"43213",
-      "nofify":false
+      "name": "WHITEHALL",
+      "zip": "43213"
    },
    {
-      "name":"WILMINGTON",
-      "zip":"45177",
-      "nofify":false
+      "name": "WILMINGTON",
+      "zip": "45177"
    },
    {
-      "name":"WOODVILLE",
-      "zip":"43469",
-      "nofify":false
+      "name": "WOODVILLE",
+      "zip": "43469"
    },
    {
-      "name":"WOOSTER",
-      "zip":"44691",
-      "nofify":false
+      "name": "WOOSTER",
+      "zip": "44691"
    },
    {
-      "name":"WORTHINGTON",
-      "zip":"43085",
-      "nofify":false
+      "name": "WORTHINGTON",
+      "zip": "43085"
    }
 ]
